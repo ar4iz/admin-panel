@@ -58,7 +58,7 @@ export default class Editor extends Component {
     login(pass) {
         if(pass.length > 5) {
             axios
-                .post("./api/login.php", {"password": pass})
+                .post('./api/login.php', {"password": pass})
                 .then(res => {
                     this.setState({
                         auth: res.data.auth,
@@ -76,7 +76,7 @@ export default class Editor extends Component {
 
     logout() {
         axios
-            .get("./api/logout.php")
+            .get('./api/logout.php')
             .then(() => {
                 window.location.replace("/");
             })
@@ -240,21 +240,21 @@ export default class Editor extends Component {
                     modal={modal}
                     target={'modal-save'}
                     method={this.save}
-                    text{{
+                    text={{
                         title: "Saving",
                         descr: "Are you want to save editing?",
                         btn: "Save"
-                }} />
+                }}/>
 
                 <ConfirmModal
                     modal={modal}
                     target={'modal-logout'}
                     method={this.logout}
-                    text{{
+                    text={{
                         title: "Exit",
                         descr: "Are you want to logout?",
                         btn: "Logout"
-                }} />
+                }}/>
 
                 <ChooseModal modal={modal} target={'modal-open'} data={pageList} redirect={this.init} />
                 <ChooseModal modal={modal} target={'modal-backup'} data={backupsList} redirect={this.restoreBackup} />

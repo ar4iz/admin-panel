@@ -12,8 +12,7 @@ const ConfirmModal = ({modal, target, method, text}) => {
                     <button
                         className="uk-button uk-button-primary uk-modal-close"
                         type="button"
-                        onClick={() => method()}
-                    >{btn}</button>
+                        onClick={() => method()}>{btn}</button>
                 </p>
             </div>
         </div>
